@@ -1,0 +1,1046 @@
+/* 헤더, 푸터를 제외한 모든 영역은 index */
+
+
+.inner01{height: 350px;}
+.inner01::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/* 메인 슬라이드 */
+.sc-visual{
+    float: left;
+    width: 770px; 
+    height: 100%;
+    /* background: #ccc; */
+    position: relative;
+}
+.sc-visual .slide-cont{
+    left: 80px;
+    width: 690px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    /* background: #888; */
+}
+
+.sc-visual .slide-cont.on{
+    z-index: 10;
+}
+.sc-visual .slide-cont h3 {
+    width: 80px;
+    height: 50%;
+    position: absolute; top: 0; left: 0;
+    background-color: #d2e1e9;
+    left: -80px;
+    color: #333;
+    font-weight: 600;
+    box-sizing: border-box;
+}
+.sc-visual .slide-cont h3 a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    /* 라인하이트로 text 위치 조정 */
+    line-height: 250px;
+    font-size: 14px;
+    box-sizing: border-box;
+
+    /* background: #f00; 전체감싸는거 확인 */
+}
+.sc-visual .slide-cont.slide01 h3 a::before{
+    background-position: 0 0;
+    width: 50px; height: 50px;
+    content: '';
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    margin: 0 15px 10px;    
+}
+
+
+/* 시민참여 칸 밑으로 내려오는거 확인 */
+.sc-visual .slide-cont.slide02 h3 {top: 50%;}
+.sc-visual .slide-cont.slide02 h3 a::before{
+    background-position: -50px 0px;
+    width: 50px; height: 50px;
+    content: '';
+    display: block;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 50px; 
+    margin: 0 15px 10px;
+}
+
+/* on css: 슬라이드 선택 시, 색깔변화  */
+.sc-visual .slide-cont.on h3 {
+    background-color: #0158a8;
+    color: #fff;
+    /* @@@삭제 오류 원인 position: relative; */
+}
+.sc-visual .slide-cont.on h3::after{
+    /* content: '';
+    z-index: 10;
+    position: absolute;
+    left: 99%;
+    top: 50%;
+    
+    border-width: 25px 0 25px 32px;
+    width: 0; height: 0;
+    background-color: #f00;
+     */
+     
+    content: " ";
+    position: absolute;
+    z-index: 10;
+    left: 99%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-top: -25px;
+
+    /* boder속성 공부 @@ */
+    border-width: 25px 0 25px 32px;
+    border-color: transparent transparent transparent #0158a8;
+    box-sizing: border-box;
+}
+
+
+.sc-visual .swiper{
+    background: #f00;
+}
+
+
+/* active변화  */
+.sc-visual .swiper-slide.active{
+    top: -175px; 
+    display: block;
+    height: 350px;
+}
+.sc-visual .slide-cont.show{z-index: 10;}
+.sc-visual .swiper-slide{position: relative;}
+.sc-visual .slide-cont .caption{
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgba(0,0,0,.7);
+    /* 폰트 관련 css  */
+    text-align: left;
+    font-size: 14px;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    /* 밑에 태그 정확한 수치 확인 후 추가함 */
+    box-sizing: border-box;
+    padding-right: 122px;
+    padding-left: 10px;
+}
+
+
+.sc-visual .controls {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 110px;
+    height: 40px;
+    float: right;
+    z-index: 10;
+
+  
+}
+.sc-visual .controls::before{
+    content: '';
+    position: absolute;
+    top: 7px;
+    right: 76px;
+    width: 1px;
+    height: 24px;
+    background: rgba(255,255,255,.5);
+}
+.sc-visual .controls::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.sc-visual .controls .fraction{
+    float: left;
+    width: 24px; height: 24px;
+    position: absolute;
+    top: 8px;
+    color: #fff;
+    font-size: 7px;
+    text-align: center;
+    line-height: 24px;
+}
+.sc-visual .controls .control-box{
+    /* float: left; */
+    display: inline-block;
+}
+.sc-visual .control-box .btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    z-index: 10;
+    cursor: pointer;
+
+}
+/* 클라스 명을 더하여 display:none설정 */
+.sc-visual .control-box .control-play .btn{
+    display: none;
+}
+
+.sc-visual .control-box .btn.prev{
+    left: 44px;
+    background-position: -241px -285px;
+    width: 18px;
+    height: 18px;
+}
+.sc-visual .control-box .btn.next{
+    right: 7px;
+    background-position: -256px -285px;
+    width: 18px;
+    height: 18px;
+}
+.sc-visual .control-box .btn.pause::before{
+    display: block;
+    content: '';
+    display: block;
+    background-position: -285px -285px;
+    width: 18px; height: 18px;
+    position: absolute;
+    top: 0;
+    left: 67px;
+}
+.sc-visual .control-box .btn.start::before{
+    display: none;
+    background-position: -269px -285px;
+    content: '';
+    display: block;
+    width: 18px; height: 18px;
+    position: absolute;
+    top: 0;
+    left: 67px;
+    
+}
+/* js pause.on */
+.sc-visual .control-box .control-play .on{display: block;}
+
+
+
+
+
+/* 코로나현황  */
+.inner01-1{
+    float: right;
+    width: 360px;
+}
+.sc-issue {
+    position: relative;
+    background: url(../images/img-situation.jpg) no-repeat;
+    width: 360px;
+    height: 214px;
+}
+.sc-issue .corona-area {
+    display: block;
+    height: 129px;
+}
+.sc-issue .corona-area .date {
+    top: 11px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 25px;
+    color: #000;
+    left: initial;
+    right: 20px;
+    letter-spacing: -0.05em;
+    height: 16px;
+    position: absolute;
+    display: inline-block;
+}
+.sc-issue .corona-area p {
+    /* background: #f00; */
+    position: absolute;
+    top: 96px;
+    width: 140px;
+    height: 26px;
+    font-size: 18px;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+.sc-issue .corona-area .desc01{left: 31px;}
+.sc-issue .corona-area .desc02{left: 192px;}
+
+
+
+
+
+.sc-issue .vaccine-area .date {
+    position: absolute;
+    display: inline-block;
+    top: 137px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-left: 25px;
+    color: #000;
+    left: initial;
+    right: 20px;
+    letter-spacing: -0.05em;
+    height: 16px;
+}
+.sc-issue .vaccine-area .vaccine {
+    position: absolute;
+    top: 182px;
+    left: 50%;
+    display: inline-block;
+    height: 26px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: -0.09em;
+    /* background: #f00; */
+}
+.sc-issue .vaccine-area .vaccine.item01 {margin-left: -146px;}
+.sc-issue .vaccine-area .vaccine.item02 {margin-left: -62px;}
+.sc-issue .vaccine-area .vaccine.item03 {margin-left: 21px;}
+.sc-issue .vaccine-area .vaccine.item04 {margin-left: 105.5px;}
+
+/* 광고배너 */
+.ad-top{margin-top: 7px; background: #f00;}
+.ad-top .link-ad{
+    display: block;
+    background: url(../images/ad-top.jpg) no-repeat;
+    width: 360px; height: 130px;
+}
+
+
+
+
+
+
+
+
+/* 주요 서비스 */
+.sc-service {
+    padding-top: 50px;
+    position: relative;
+}
+
+.sc-service .title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dbdbdb;
+    /* common에 추가 됨 font-size: 24px; */
+    /* common에 추가 됨 font-weight: 700; */
+}
+
+.sc-service .link-more {
+    width: 112px;
+    height: 29px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+    font-size: 15px;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    padding-left: 13px;
+    line-height: 28px;
+    background: url(../images/sc-main-service\ btn-link.png) no-repeat right 13px top 50%;
+}
+
+.sc-service .sevice-list {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.sc-service .service-item {
+    /* float left와 letter-spacing로는 해결되지않음. 글자많은 칸이 내려오거나 아이콘간격좁아짐 */
+    /* > display table-cell 로 해결가능 *
+    
+    /* float: left; */
+    width: calc(100% / 11);
+    height: 90px;
+    display: table-cell;
+    text-align: center;
+    letter-spacing: -0.1em;
+}
+.sc-service .service-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 15px;
+}
+.sc-service .service-item.ic-reservation::before{background-position: -360px 0;}
+.sc-service .service-item.ic-office{width: 125px;}
+.sc-service .service-item.ic-office::before{background-position: 0 0;}
+.sc-service .service-item.ic-job::before{background-position: -120px 0;}
+.sc-service .service-item.ic-house::before{background-position: -300px 0;}
+.sc-service .service-item.ic-study::before{background-position: -180px 0;}
+.sc-service .service-item.ic-welfare::before{background-position: -960px 0;}
+.sc-service .service-item.ic-dwelling::before{background-position: -780px 0;}
+.sc-service .service-item.ic-town{width: 120px;}
+.sc-service .service-item.ic-town::before{background-position: -840px 0;}
+.sc-service .service-item.ic-seoul::before{background-position: -1020px 0;}
+.sc-service .service-item.ic-menual::before{background-position: -1080px 0;}
+.sc-service .service-item.ic-council::before{background-position: -600px 0;}
+
+
+
+/* 배너영역 */
+.banner-wrap {
+    margin-top: 35px;
+    background: #eff4f8;
+}
+.banner-wrap .banner-item {
+    float: left;
+    width: 288px;
+    padding: 20px 0;
+    position: relative;
+}
+.banner-wrap .banner-item +.banner-item::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    width: 1px;
+    height: 60px;
+    background: #dbdbdb;
+}
+.banner-wrap .banner-item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* 이벤트 - 신청 */
+.inner02 {
+    display: block;
+    padding: 50px 0;
+    border-bottom: 2px solid #222222;
+    /* 자식 div감싸지 못해서  overflow: auto; 추가
+     overflow: hidden으로 처리 가능*/
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.sc-event {
+    float: left;
+    position: relative;
+    width: 360px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.sc-event .event-item {
+    padding: 6px 0 6px 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    letter-spacing: -.01em;
+}
+.sc-event .event-item .desc {
+    color: #222;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.sc-event .event-item .sub-title {margin: 0 9px 0 0;}
+.sc-event .title{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dbdbdb;
+}
+.sc-event {font-size: 20px;}
+.sc-event .link-more{
+    /* float: right; position 으로 좌표잡을거라삭제*/
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 20px;
+    height:18px;
+    border: 1px solid #ddd;
+    background-position: -1px -1px;
+}
+.sc-event .event-list .sub-title{color: #9b64d3;}
+
+
+
+
+/* 이달의 축제 */
+.sc-festival {
+    float: left;
+    margin: 0 36px;
+    position: relative;
+    width: 360px;
+    box-sizing: border-box;
+    letter-spacing: normal;
+}
+.sc-festival .festival-item {
+    padding: 6px 0 6px 0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    letter-spacing: -.01em;
+}
+.sc-festival .festival-item .desc {
+    color: #222;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.sc-festival .title{
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dbdbdb;
+    margin-bottom: 10px;
+}
+.sc-festival .link-more{
+    /* float: right; position 으로 좌표잡을거라삭제*/
+    position: absolute;
+    right: 0;
+    top: 6px;
+    width: 20px;
+    height:18px;
+    border: 1px solid #ddd;
+    background-position: -1px -1px;
+}
+.sc-festival .sub-title{
+    color: #c35c3c;
+    margin-right: 9px;
+}
+
+
+
+/* 이벤트 - 자주찾은 서비스 */
+.sc-often {
+    width: 360px;
+    float: left;
+}
+.sc-often .aside-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+.sc-often .service-list {
+    margin: 0;
+    background: #eff4f8;
+    width: 360px;
+    overflow: hidden;
+    /* 패딩 수치 조정 */
+    padding: 15px 5px 2px 20px;
+}
+.sc-often .service-item {
+    float: left;
+    width: calc((100% - 45px)/2);
+    position: relative;
+    padding: 0 0 10px 10px;
+
+}
+.sc-often .service-item::before{
+    content: '';
+    position: absolute;
+    background: #666666;
+    width: 2px;
+    height: 2px;
+    left: 0;
+    top: 50%;
+    margin-top: -6px;
+}
+.sc-often .service-item a{
+    display: block;
+    /* width: 94%; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    color: #333;
+}
+
+
+/* 분야별정보 */
+.sc-category {
+    height: 145px;
+    padding: 40px 0;
+}
+.sc-category .title {padding: 0 0 20px 0;}
+.sc-category .category-list {
+    padding: 0 27px;
+    margin-left: -59px;
+    box-sizing: border-box;
+}
+.sc-category .category-item {
+    float: left;
+    width: 85px;
+    height: 145px;
+    margin-left: 59px;
+    text-align: center;
+}
+.sc-category .category-item a{
+    display: block;
+    /* background: #f00; */
+    padding-top: 10px;
+}
+.sc-category::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.sc-category .category-list {display: block;}
+.category-info .category-list a{
+    text-align: center;
+    font-size: 16px;
+    padding-top: 10px;
+}
+.sc-category .category-item.ic-house::before{background-position: -115px -10px;}
+.sc-category .category-item.ic-economy::before{background-position: -10px -115px;}
+.sc-category .category-item.ic-traffic::before{background-position: -115px -115px;}
+.sc-category .category-item.ic-environment::before{background-position: -220px -10px;}
+.sc-category .category-item.ic-welfare::before{background-position: -220px -115px;}
+.sc-category .category-item.ic-safe::before{background-position: -10px -220px;}
+.sc-category .category-item.ic-culture::before{background-position: -115px -220px;}
+.sc-category .category-item.ic-admin::before{background-position: -10px -10px;}
+
+
+/* 새소식 */
+.sc-news {
+    padding: 20px 0 30px;
+    position: relative;
+}
+.sc-news > h2 {padding-bottom: 20px;}
+.sc-news .news-list{margin-right: -20px;}
+.sc-news .news-item {
+    float: left;
+    margin-right: 20px;
+    width: 273px;
+}
+.sc-news .link-more {
+    width: 75px;
+    height: auto;
+    position: absolute;
+    right: 0;
+    top: 26px;
+    background-position: 0 -259px;
+
+    display: inline-block;
+    font-size: 15px;
+    color: #7d7d7d;
+}
+.sc-news .news-item .title{
+    background-color: #d76000;
+    font-size: 14px;
+
+    position: absolute;
+    top: 156px;
+    width: 82px;
+    height: 32px;
+    color: #fff;
+
+    text-align: center;
+    line-height: 32px;
+    z-index: 1;
+}
+
+.sc-news .news-item a{
+    display: block;
+    position: relative;
+}
+.sc-news .news-item .img-box{
+    overflow: hidden;
+    margin-bottom: 15px;
+
+    width: auto;
+    min-width: 273px;
+    height: 188px;
+}
+.sc-news .news-item .cont-box{
+    font-size: 16px;
+    width: 100%;
+    height: 3em;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #222;
+    letter-spacing: -.1em;
+    /* ?? */
+    word-break: keep-all;
+    white-space: normal;
+    word-wrap: normal;
+}
+.sc-news .news-item.corona{
+    width: 273px;
+    height: 248px;
+}
+
+
+
+/* 서울영상 */
+.inner02{width: 1152px;
+    margin: 0 auto;
+}
+.inner02::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.sc-video {width: 280px; float: left;}
+.sc-video::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.sc-video .title { float: left; padding-bottom: 11px;}
+.sc-video .img-box {position: relative;}
+.sc-video .img-box a{display: block;}
+.sc-video img {
+    width: 280px;
+    height: 152px;
+    display: block;
+}
+.sc-video .cont-box {
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    bottom: 0;
+    width: 280px;
+}
+.sc-video .cont-box .desc {
+    color: #fff;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 14px 20px;
+    font-weight: bold;
+    letter-spacing: -0.05em;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/* 서울소식 */
+.sc-notice {
+    float: left;
+    width: 480px;
+    margin-left: 20px;
+}
+.sc-notice >h2 {padding-bottom: 11px;}
+.sc-notice .notice-item{
+    color: #555;
+    padding: 8px 0;
+    letter-spacing: -.09em;
+    font-size: 16px;
+}
+.sc-notice .notice-item a{
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.sc-notice .notice-item .sub-title{
+    color: #09ac43;
+    font-weight: 400;
+    margin-right: 18px;
+}
+
+
+
+/* 서울sns 배너 */
+.sc-social {
+    float: left;
+    margin-left: 20px;
+    width: 350px;
+    height: 195px;
+    background: url(../images/sns-bg.jpg);
+    position: relative;
+}
+
+.sc-social .sns-link {
+    display: block;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+}
+
+.sc-social .sns-title {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.1em;
+    top: 2px;
+    left: 2px;
+    display: inline-block;
+    position: relative;
+}
+
+.sc-social .sns-title::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 20;
+    display: inline-block;
+    width: 34px;
+    height: 24px;
+    background-position: -247px 0;
+    border-left: 1px solid #878787;
+    margin-left: 10px;
+}
+
+
+/* sns 배너 - 아이콘리스트 */
+.sc-social .link-sns-area {
+    overflow: hidden;
+    position: absolute;
+    /* 영역에 딱맞게 쎈터는 아니므로 좌표 참고
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    top: 90px;
+    left: 50%;
+    width: 276px;
+    height: 40px;
+    margin-left: -138px;
+
+}
+.sc-social .sns-item {
+    float: left;
+    margin: 0 3px;
+}
+.sc-social .link-sns-area .sns-item.ic-insta{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: 0 0;
+    content: '';
+}
+.sc-social .link-sns-area .sns-item.ic-facebook{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -40px 0;
+    content: '';
+}
+.sc-social .link-sns-area .sns-item.ic-twitter{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -80px 0;
+    content: '';
+}
+.sc-social .link-sns-area .sns-item.ic-blog{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -120px 0;
+    content: '';
+}
+.sc-social .link-sns-area .sns-item.ic-youtube{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -160px 0;
+    content: '';
+}
+.sc-social .link-sns-area .sns-item.ic-kakaostory{
+    display: block;
+    width: 40px;
+    height: 40px;
+    background-position: -200px 0;
+    content: '';
+}
+
+
+/* 하단 슬라이드 */
+
+.bottom-slide {
+    border-top: 2px solid #222;
+    padding: 50px 0;
+}
+
+
+
+
+/* sc-popup */
+.sc-popup{
+    padding: 50px 0;
+}
+.sc-popup .controls{
+    height: 32px; margin-top: 5px;
+    position: relative;
+}
+/* wrap에서 position으로 중앙정렬 맞추기 */
+.sc-popup .controls .wrap{
+    float: right;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.sc-popup .controls .wrap::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.sc-popup .controls .fraction{
+    float: left; 
+    width: auto;
+    margin-right: 10px;
+    /* line-height: 32px; 삭제 후 wrap으로 중앙맞춤 */
+}
+
+
+.sc-popup .controls .btn.prev::before{
+    display: inline-block;
+    content: '';
+    width:20px;
+    height:20px;
+    background-position: -45px -43px;
+}
+.sc-popup .controls .btn.next::before{
+    display: inline-block;
+    content: '';
+    width:20px;
+    height:20px;
+    background-position: -86px -43px;
+}
+.sc-popup .controls .btn-play{float: left;}
+.sc-popup .controls .btn{
+    float: left;
+    width:20px;
+    height:20px;
+    border: 1px solid #999;
+    
+}
+.sc-popup .controls .btn-play .btn{
+    /*js : visibility: hidden;영역을 살려서 숨김 */
+    display: none;
+}
+
+.sc-popup .controls .btn-play .btn.pause::before{
+    display: inline-block;
+    content: '';
+    width:20px;
+    height:20px;
+    background-position: -65px -43px;
+}
+.sc-popup .controls .btn-play .btn.start::before{
+    display: inline-block;
+    content: '';
+    width:20px;
+    height:20px;
+    background-position: -101px -43px;
+}
+.sc-popup .controls .btn-play .on{
+/* js :visibility: visible; */
+    display: block;
+}
+
+
+/* 사이트 링크 */
+.sc-related{
+    margin-bottom: 20px;
+}
+.sc-related .related-list{
+    /* overflow: hidden; 넘칠 수가없어서 안나옴 삭제*/
+    border: 1px solid #d0d0d0;
+    background: #f7f7f7;
+    box-sizing: border-box;
+    position: relative;
+}
+.sc-related .related-list::after{
+    content: '';
+    clear: both;
+    display: block;
+}
+.sc-related .related-item{
+    display: block;
+    float: left;
+    width: calc(100% / 3);
+    text-align: center;
+    color: #333;
+    height: 50px;
+}
+
+.sc-related .related-item .btn-related{
+    display: block;
+    padding: 16px 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+.sc-related .related-item .sort{
+    display: inline-block;
+    padding-right: 20px;
+    position: relative;
+    font-size: 14px;
+
+}
+.sc-related .btn-related .sort::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    height: 7px;
+    width: 7px;
+    border-style: solid;
+    border-color: #373737;
+    border-width: 0px 2px 2px 0px;
+    transform: rotate(-135deg);
+    transition: all .3s;
+}
+.sc-related .btn-related.on .sort::after{
+    transform: rotate(45deg);
+    top: 4px;
+
+}
+
+
+.sc-related .related-item+.related-item{
+    border-left: 1px solid #d0d0d0;
+    box-sizing: border-box;
+}
+
+.sc-related .agency-list{
+    display: block;
+    position: absolute;
+    bottom: 50px;
+    left: -1px;
+    width: 1152px;
+    padding: 10px 20px 20px;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    box-sizing: border-box;
+    z-index: 10;
+    /* js 추가 */
+    display: none;
+    
+}
+.sc-related .agency-item{
+    float: left;
+    width: 25%;
+    margin-top: 10px;
+}
+
+
+

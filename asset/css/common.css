@@ -1,0 +1,135 @@
+/* 공통요소 */
+body{
+    font-family: 'Nanum Gothic';
+    font-weight: 400;
+    color: #222;
+    font-style: normal;
+    line-height: 1.35em;
+}
+main{letter-spacing: -0.05em;}
+.common-inner,.inner{
+    width: 1152px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+h2{font-weight: 700;}
+.title{
+    font-size: 24px;
+    font-weight: 700;
+}
+.blind{
+	position: absolute;
+	width: 1px; height: 1px;
+	margin: -1px;
+	clip: rect(0 0 0 0 );
+	overflow: hidden;
+}
+
+
+/* sp-bg01 */
+.header-area .gnb-area .sub-logo a,
+.header-area .search-area .btn-search,
+.sc-visual .control-box .btn.prev,
+.sc-visual .control-box .btn.next,
+.sc-visual .control-box .btn.start::before,
+.sc-visual .control-box .btn.pause::before,
+.sc-event .link-more,
+.sc-festival .link-more,
+.sc-news .link-more,
+.footer-area .corp-wrap .img-box,
+.sc-popup .controls .btn.prev::before,
+.sc-popup .controls .btn.next::before,
+.sc-popup .controls .btn-play .btn.pause::before,
+.sc-popup .controls .btn-play .btn.start::before{
+    background-image: url(../images/sp-bg01.png);
+    background-repeat: no-repeat;
+    background-size: 300px auto;
+}
+
+
+
+/* sp-bg02 */
+.header-area .logo-area .logo{
+    background-image: url(../images/sp-bg02.png);
+    background-repeat: no-repeat;
+    background-size: 180px auto;
+}
+
+
+/* sp-bg03 */
+.sc-visual .slide-cont.slide01 h3 a::before,
+.sc-visual .slide-cont.slide02 h3 a::before{
+    background-image: url(../images/sp-bg03.png);
+    background-repeat: no-repeat;
+    background-size: 300px auto;
+}
+
+/* sp-bg04 */
+.sc-service .service-item.ic-reservation::before,
+.sc-service .service-item.ic-office::before,
+.sc-service .service-item.ic-job::before,
+.sc-service .service-item.ic-house::before,
+.sc-service .service-item.ic-study::before,
+.sc-service .service-item.ic-welfare::before,
+.sc-service .service-item.ic-dwelling::before,
+.sc-service .service-item.ic-town::before,
+.sc-service .service-item.ic-seoul::before,
+.sc-service .service-item.ic-menual::before,
+.sc-service .service-item.ic-council::before{
+    margin: 0 auto 10px;
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-image: url(../images/sp-bg04.png);
+    background-repeat: no-repeat;
+    background-size: 1140px auto;
+    
+}
+
+/* sp-bg05 */
+.sc-category .category-item.ic-house::before,
+.sc-category .category-item.ic-economy::before,
+.sc-category .category-item.ic-traffic::before,
+.sc-category .category-item.ic-environment::before,
+.sc-category .category-item.ic-welfare::before,
+.sc-category .category-item.ic-safe::before,
+.sc-category .category-item.ic-culture::before,
+.sc-category .category-item.ic-admin::before{
+    content: '';
+    display: block;
+    height: 85px;
+    height: 85px;
+    background-image: url(../images/sp-bg05.png);
+    background-repeat: no-repeat;
+    background-size: 315px auto;
+    
+}
+
+/* sns-list */
+.sc-social .sns-title::after,
+.sc-social .link-sns-area .sns-item.ic-insta,
+.sc-social .link-sns-area .sns-item.ic-facebook,
+.sc-social .link-sns-area .sns-item.ic-twitter,
+.sc-social .link-sns-area .sns-item.ic-blog,
+.sc-social .link-sns-area .sns-item.ic-youtube,
+.sc-social .link-sns-area .sns-item.ic-kakaostory{
+    background-image: url(../images/sns-list.png);
+    background-repeat: no-repeat;
+    background-size: 280px auto;
+}
+
+/* footer-sns */
+.footer-area .info-area .sns-link-area .sns.facebook,
+.footer-area .info-area .sns-link-area .sns.twitter,
+.footer-area .info-area .sns-link-area .sns.insta,
+.footer-area .info-area .sns-link-area .sns.youtube,
+.footer-area .info-area .sns-link-area .sns.kakaostory,
+.footer-area .info-area .sns-link-area .sns.blog{
+    content: '';
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/footer-sns.png);
+    background-repeat: no-repeat;
+    background-size: 175px auto;
+}
